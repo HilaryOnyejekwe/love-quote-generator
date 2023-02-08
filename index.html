@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Random Love Note Generator</title>
+  <style>
+    body {
+      background-color: #dddddd;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100vh;
+    }
+    
+    #love-note {
+      margin-top: 50px;
+    }
+    
+    #generate-button {
+      background-color: blue;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      margin-top: 50px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Love Note Generator</h1>
+  <div id="love-note"></div>
+  <button id="generate-button">Generate Love Note</button>
+  <script>
+    // array of love notes
+    var loveNotes = [
+      "You make my heart skip a beat.",
+      "Every moment with you is a blessing.",
+      "You light up my world like nobody else.",
+      "I love the way you make me feel.",
+      "You bring out the best in me.",
+      "I am so grateful to have you in my life.",
+      "I love you more and more each day.",
+      "You are my sunshine on a cloudy day.",
+      "I can't imagine life without you.",
+      "Be my val.",
+      "Hilary is a husband material",
+      "You make my heart full and my soul happy."
+    ];
+  
+    // function to generate a random love note
+    function generateLoveNote() {
+      // select a random love note from the array
+      var randomNote = loveNotes[Math.floor(Math.random() * loveNotes.length)];
+      
+      // return the selected love note
+      return randomNote;
+    }
+  
+    // display the generated love note on the page
+    document.getElementById("love-note").innerHTML = "<h2>" + generateLoveNote() + "</h2>";
+    
+    // add an event listener to the generate button
+    document.getElementById("generate-button").addEventListener("click", function() {
+      // update the love note when the button is clicked
+      document.getElementById("love-note").innerHTML = "<h2>" + generateLoveNote() + "</h2>";
+    });
+  </script>
+</body>
+</html>
